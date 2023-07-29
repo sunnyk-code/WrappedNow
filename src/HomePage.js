@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import TopArtists from './TopArtists';
 
 const HomePage = () => {
   const [topArtists, setTopArtists] = useState([]);
+  const accessToken = window.localStorage.getItem("token")
 
   useEffect(() => {
     // Implement the logic to fetch the user's top artists here using the Spotify Web API
@@ -26,14 +28,7 @@ const HomePage = () => {
   return (
     <div className="home-page">
       <h1>Your Top 5 Artists</h1>
-      <div className="artists-container">
-        {topArtists.map(artist => (
-          <div key={artist.id} className="artist-card">
-            <img src={artist.imageUrl} alt={artist.name} />
-            <p>{artist.name}</p>
-          </div>
-        ))}
-      </div>
+      <TopArtists accessToken={accessToken} />
     </div>
   );
 };

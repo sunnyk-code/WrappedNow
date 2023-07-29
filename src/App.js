@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import TitlePage from './TitlePage';
 import HomePage from './HomePage';
+import axios from "axios";
 
 function App() {
   const CLIENT_ID = "f01165f1cab34ad79ca133515ee2bd16";
